@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 import Alamofire
-
+import SwiftyJSON
 
 class CoreLocationController : NSObject, CLLocationManagerDelegate {
 
@@ -76,8 +76,11 @@ class CoreLocationController : NSObject, CLLocationManagerDelegate {
                 
                 //println(Alamofire.request(.GET, "http://httpbin.org/get"))
                 
-                Alamofire.request(.GET, "http://solr.smk.dk:8080/solr/prod_all_dk/select?q=title_first:ordrup&wt=json").responseJSON {(_, _, JSON, _) in
-                    println(toString(JSON))
+                Alamofire.request(.GET, "http://solr.smk.dk:8080/solr/prod_all_dk/select?q=title_first:ordrup&wt=json").responseJSON {(_, _, data, _) in
+                    println(toString(data))
+                    
+                    var json = JSON(data!)
+                    println(json["docs"][0])
                 }
             }
         })
