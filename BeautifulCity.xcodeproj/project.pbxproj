@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E0BDEE41B19C0C100FE4E2B /* ArtWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BDEE31B19C0C100FE4E2B /* ArtWebViewController.swift */; };
+		6E0BDEE61B19EF4C00FE4E2B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6E0BDEE51B19EF4C00FE4E2B /* README.md */; };
 		6E6BFA1F1B188EB900A4CC13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BFA1E1B188EB900A4CC13 /* AppDelegate.swift */; };
 		6E6BFA211B188EB900A4CC13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BFA201B188EB900A4CC13 /* ViewController.swift */; };
 		6E6BFA241B188EB900A4CC13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6BFA221B188EB900A4CC13 /* Main.storyboard */; };
 		6E6BFA261B188EB900A4CC13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6BFA251B188EB900A4CC13 /* Images.xcassets */; };
 		6E6BFA291B188EB900A4CC13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E6BFA271B188EB900A4CC13 /* LaunchScreen.xib */; };
 		6E6BFA351B188EB900A4CC13 /* BeautifulCityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BFA341B188EB900A4CC13 /* BeautifulCityTests.swift */; };
+		6E6BFA3F1B188EEA00A4CC13 /* CoreLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BFA3E1B188EEA00A4CC13 /* CoreLocationController.swift */; };
+		C96AAD3AD680BF8A5E15BFFE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1319471D08B4EE0DE9E40392 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1319471D08B4EE0DE9E40392 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E0BDEE21B19A4EB00FE4E2B /* Locations.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Locations.gpx; sourceTree = "<group>"; };
+		6E0BDEE31B19C0C100FE4E2B /* ArtWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWebViewController.swift; sourceTree = "<group>"; };
+		6E0BDEE51B19EF4C00FE4E2B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6E6BFA191B188EB900A4CC13 /* BeautifulCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautifulCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6BFA1D1B188EB900A4CC13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E6BFA1E1B188EB900A4CC13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +44,9 @@
 		6E6BFA2E1B188EB900A4CC13 /* BeautifulCityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautifulCityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6BFA331B188EB900A4CC13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E6BFA341B188EB900A4CC13 /* BeautifulCityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautifulCityTests.swift; sourceTree = "<group>"; };
+		6E6BFA3E1B188EEA00A4CC13 /* CoreLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
+		F86702CB6E315FA095B104F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F915D16FF638FC8E61CA3FDD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96AAD3AD680BF8A5E15BFFE /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +68,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		138028962EF001C5DE5F7899 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1319471D08B4EE0DE9E40392 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6E6BFA101B188EB900A4CC13 = {
 			isa = PBXGroup;
 			children = (
 				6E6BFA1B1B188EB900A4CC13 /* BeautifulCity */,
 				6E6BFA311B188EB900A4CC13 /* BeautifulCityTests */,
 				6E6BFA1A1B188EB900A4CC13 /* Products */,
+				D2778A5337DDD9EC51BA1A5C /* Pods */,
+				138028962EF001C5DE5F7899 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +99,16 @@
 		6E6BFA1B1B188EB900A4CC13 /* BeautifulCity */ = {
 			isa = PBXGroup;
 			children = (
+				6E0BDEE51B19EF4C00FE4E2B /* README.md */,
 				6E6BFA1E1B188EB900A4CC13 /* AppDelegate.swift */,
 				6E6BFA201B188EB900A4CC13 /* ViewController.swift */,
 				6E6BFA221B188EB900A4CC13 /* Main.storyboard */,
 				6E6BFA251B188EB900A4CC13 /* Images.xcassets */,
 				6E6BFA271B188EB900A4CC13 /* LaunchScreen.xib */,
 				6E6BFA1C1B188EB900A4CC13 /* Supporting Files */,
+				6E6BFA3E1B188EEA00A4CC13 /* CoreLocationController.swift */,
+				6E0BDEE21B19A4EB00FE4E2B /* Locations.gpx */,
+				6E0BDEE31B19C0C100FE4E2B /* ArtWebViewController.swift */,
 			);
 			path = BeautifulCity;
 			sourceTree = "<group>";
@@ -112,6 +138,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D2778A5337DDD9EC51BA1A5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F86702CB6E315FA095B104F9 /* Pods.debug.xcconfig */,
+				F915D16FF638FC8E61CA3FDD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E6BFA381B188EB900A4CC13 /* Build configuration list for PBXNativeTarget "BeautifulCity" */;
 			buildPhases = (
+				10F0E5F4C88174321866F8CB /* Check Pods Manifest.lock */,
 				6E6BFA151B188EB900A4CC13 /* Sources */,
 				6E6BFA161B188EB900A4CC13 /* Frameworks */,
 				6E6BFA171B188EB900A4CC13 /* Resources */,
+				23528C7907DCD8B5C1D2014B /* Copy Pods Resources */,
+				EF69518BA2DB12AF2B9089BA /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,11 +245,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10F0E5F4C88174321866F8CB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		23528C7907DCD8B5C1D2014B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF69518BA2DB12AF2B9089BA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E6BFA151B188EB900A4CC13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6BFA3F1B188EEA00A4CC13 /* CoreLocationController.swift in Sources */,
+				6E0BDEE41B19C0C100FE4E2B /* ArtWebViewController.swift in Sources */,
+				6E0BDEE61B19EF4C00FE4E2B /* README.md in Sources */,
 				6E6BFA211B188EB900A4CC13 /* ViewController.swift in Sources */,
 				6E6BFA1F1B188EB900A4CC13 /* AppDelegate.swift in Sources */,
 			);
@@ -338,6 +427,7 @@
 		};
 		6E6BFA391B188EB900A4CC13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F86702CB6E315FA095B104F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BeautifulCity/Info.plist;
@@ -348,6 +438,7 @@
 		};
 		6E6BFA3A1B188EB900A4CC13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F915D16FF638FC8E61CA3FDD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BeautifulCity/Info.plist;
@@ -409,6 +500,7 @@
 				6E6BFA3A1B188EB900A4CC13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E6BFA3B1B188EB900A4CC13 /* Build configuration list for PBXNativeTarget "BeautifulCityTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +509,7 @@
 				6E6BFA3D1B188EB900A4CC13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
