@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var coreLocationController:CoreLocationController?
+    var relatedArt:JSON?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "artAvailable:", name: "ARTAVAILABLE", object: nil)
         self.coreLocationController = CoreLocationController()
+        
         return true
     }
 
@@ -46,5 +50,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.coreLocationController = CoreLocationController()
     }
 
+    func artAvailable(notification:NSNotification) -> Void {
+        self.relatedArt = nil
+        let artInfo = notification.userInfo as! Dictionary<String,AnyObject>
+        var json = JSON(artInfo["art"]!)
+        
+        var images = json["response"]["docs"]
+        
+//        for (index, image) in enumerate(images) {
+//            println(json["response"]["docs"][index]["title_first"])
+//            println(json["response"]["docs"][index]["medium_image_url"])
+//
+//        }
+        self.relatedArt = json
+    }
 }
 

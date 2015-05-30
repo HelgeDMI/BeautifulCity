@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H7a-2T-yZD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--BeautifulCity-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BeautifulCity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,117 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J9a-Qd-bLN">
+                                <rect key="frame" x="0.0" y="-51" width="600" height="600"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qng-v2-R1n">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Beautify City" id="wFM-WD-Zso">
+                                        <connections>
+                                            <segue destination="yuk-0k-jvg" kind="presentation" id="qyV-fS-Swh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="qng-v2-R1n" secondAttribute="bottom" id="3cg-Ia-phQ"/>
+                            <constraint firstItem="J9a-Qd-bLN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="53A-SG-kpI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J9a-Qd-bLN" secondAttribute="trailing" constant="-16" id="KhH-JB-cLk"/>
+                            <constraint firstItem="qng-v2-R1n" firstAttribute="top" secondItem="J9a-Qd-bLN" secondAttribute="bottom" constant="7" id="XVz-YB-lv9"/>
+                            <constraint firstItem="J9a-Qd-bLN" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="-51" id="Zf0-NQ-A2k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qng-v2-R1n" secondAttribute="trailing" constant="-16" id="f9T-5r-baU"/>
+                            <constraint firstItem="qng-v2-R1n" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="sDH-dp-4Ou"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="BeautifulCity" id="uqi-Ku-s5h"/>
+                    <connections>
+                        <outlet property="mapView" destination="J9a-Qd-bLN" id="rAp-Ud-OCU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1382" y="63"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="t5w-eT-sHz">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTi-Mo-cga" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="yuk-0k-jvg" customClass="ArtWebViewController" customModule="BeautifulCity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kfl-3L-rEP"/>
+                        <viewControllerLayoutGuide type="bottom" id="nmA-Y4-AjM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sdF-vZ-9XU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" misplaced="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZwK-Y4-AWW">
+                                <rect key="frame" x="0.0" y="22" width="600" height="578"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lX0-Ur-GGv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Art" id="5bY-1t-6PG">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="xfh-0s-peZ">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jmF-lX-xjb">
+                                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label=""/>
+                                                <state key="normal" title="Back">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="vXZ-lx-hvc" kind="presentation" id="Job-KO-1i7"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lX0-Ur-GGv" firstAttribute="leading" secondItem="sdF-vZ-9XU" secondAttribute="leadingMargin" constant="-16" id="IZJ-Y9-zhD"/>
+                            <constraint firstItem="ZwK-Y4-AWW" firstAttribute="top" secondItem="kfl-3L-rEP" secondAttribute="bottom" constant="2" id="bwv-go-5AQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lX0-Ur-GGv" secondAttribute="trailing" constant="-16" id="gM6-Lp-VON"/>
+                            <constraint firstItem="ZwK-Y4-AWW" firstAttribute="leading" secondItem="sdF-vZ-9XU" secondAttribute="leadingMargin" constant="16" id="izg-fG-tix"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZwK-Y4-AWW" secondAttribute="trailing" constant="16" id="jJF-IV-xrt"/>
+                            <constraint firstItem="nmA-Y4-AjM" firstAttribute="top" secondItem="ZwK-Y4-AWW" secondAttribute="bottom" id="t6n-LG-KZW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="aSm-hm-k5L"/>
+                    <connections>
+                        <outletCollection property="webView" destination="ZwK-Y4-AWW" collectionClass="NSMutableArray" id="8Fg-r5-s9D"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2251" y="87"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1Ue-As-yYY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H7a-2T-yZD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TkW-DC-fiC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="osQ-NQ-vTq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFy-be-p3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602" y="63"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Job-KO-1i7"/>
+    </inferredMetricsTieBreakers>
 </document>

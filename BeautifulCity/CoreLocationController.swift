@@ -14,7 +14,7 @@ import SwiftyJSON
 class CoreLocationController : NSObject, CLLocationManagerDelegate {
 
     var locationManager:CLLocationManager = CLLocationManager()
-    
+        
     override init() {
         super.init()
         self.locationManager.delegate = self
@@ -58,6 +58,8 @@ class CoreLocationController : NSObject, CLLocationManagerDelegate {
         
         println("didUpdateLocations: " + location.coordinate.latitude.description + " " + location.coordinate.longitude.description)
         
+        NSNotificationCenter.defaultCenter().postNotificationName("LOCATIONAVAILABLE", object: self, userInfo: ["loc":location])
+
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, e) -> Void in
             if let error = e {
@@ -66,25 +68,29 @@ class CoreLocationController : NSObject, CLLocationManagerDelegate {
                 let placemark = placemarks.last as! CLPlacemark
                 
                 let userInfo = [
-                    "city":     placemark.locality,
-                    "state":    placemark.administrativeArea,
-                    "country":  placemark.country,
-                    "address":  placemark.addressDictionary
+                    "city":     placemark.locality!.utf8.description,
+                    // "state":    placemark.administrativeArea!.utf8,
+                    // "country":  placemark.country!.utf8
+                    //"address":  placemark?.addressDictionary
                 ]
+
+                let city = toString(userInfo["city"]!)
+                println("Location: " + city)
                 
-                println("Location: " + toString(userInfo))
-                
-                //println(Alamofire.request(.GET, "http://httpbin.org/get"))
-                
-                Alamofire.request(.GET, "http://solr.smk.dk:8080/solr/prod_all_dk/select?q=title_first:ordrup&wt=json").responseJSON {(_, _, data, _) in
-                    println(toString(data))
+                let query = "http://solr.smk.dk:8080/solr/prod_all_dk/select?q=title_first:" + city + "&wt=json"
+                Alamofire.request(.GET, query).responseJSON {(_, _, data, _) in
                     
                     var json = JSON(data!)
-                    println(json["docs"][0])
+                    if json["response"]["numFound"] > 0 {
+                        
+                        NSNotificationCenter.defaultCenter().postNotificationName("ARTAVAILABLE", object: nil, userInfo: ["art":data!])
+                        
+                    }
                 }
             }
         })
         
-    }
 
+        
+    }
 }
